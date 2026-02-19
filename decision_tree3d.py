@@ -30,8 +30,7 @@ ax = plt.subplot(1,2,1,projection='3d')
 
 ax.scatter(X_test['petal length (cm)'],
     X_test['petal width (cm)'],
-    X_test['sepal width (cm)'], 
-    s=X_test['sepal length (cm)'], 
+    X_test['sepal width (cm)'],  
     c=y_test)
 ax.set(xlim=(0,8),xticks=np.arange(1,8),
     ylim=(0,8),yticks=np.arange(1,8),
@@ -41,6 +40,6 @@ ax.set_ylabel('petal width (cm)')
 ax.set_zlabel('sepal width (cm)')
 
 plt.subplot(1,2,2)
-tree.plot_tree(clf,fontsize=7)
+tree.plot_tree(clf,fontsize=7, impurity=True, filled=True)
 
 plt.show()
